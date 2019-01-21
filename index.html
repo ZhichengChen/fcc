@@ -1,0 +1,164 @@
+<meta charset="UTF-8" />
+<style>
+	.main {
+		width: calc(100vw - 360px);
+	}
+	.blackboard {
+		width: 40%;
+		float: left;
+		background: #347B7D;
+		border: 15px solid #CC9A67;
+		box-shadow: 2px 2px 2px rgba(20%,20%,40%,0.6),4px 4px 6px rgba(20%,20%,40%,0.4),6px 6px 12px rgba(20%,20%,40%,0.4);
+		padding: 15px;
+    	margin: 10px 5px;
+	}
+	body {
+		color: white;
+	  	background: #5cbcfc;
+	}
+	.eraser {
+    	min-height: 1.5em;
+	    display: inline-block;
+	    padding: 12px 36px;
+	    margin: 40px 5px 5px 0px;
+	    cursor: pointer;
+	    opacity: 0.9;
+	    
+	    color: #FFF;
+	    font-size: 1em;
+	    letter-spacing: 1px;
+	    text-shadow: rgba(0,0,0,0.9) 0px 1px 2px;
+	    
+	    background: #434343;
+	    border: 1px solid #242424;
+	   
+	    -webkit-border-radius: 4px;
+	     -khtml-border-radius: 4px;
+	       -moz-border-radius: 4px;
+	         -o-border-radius: 4px;
+	            border-radius: 4px;
+	    -webkit-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+	     -khtml-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+	       -moz-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+	         -o-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+	            box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+	    -webkit-transition: all 0.1s linear;
+	     -khtml-transition: all 0.1s linear;
+	       -moz-transition: all 0.1s linear;
+	         -o-transition: all 0.1s linear;
+	            transition: all 0.1s linear;
+	    background: #3a617e;
+	}
+	.shine {
+	    display: block;
+	    position: relative;
+	    background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+	    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0)));
+	    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
+	    background: -o-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
+	    background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
+	    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 );
+	    background: linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
+	    padding: 0px 12px;
+	    top: -12px;
+	    left: -24px;
+	    height: 1px;
+	    -webkit-box-shadow: rgba(255,255,255,0.2) 0px 1px 5px;
+	     -khtml-box-shadow: rgba(255,255,255,0.2) 0px 1px 5px;
+	       -moz-box-shadow: rgba(255,255,255,0.2) 0px 1px 5px;
+	         -o-box-shadow: rgba(255,255,255,0.2) 0px 1px 5px;
+	            box-shadow: rgba(255,255,255,0.2) 0px 1px 5px;
+	    -webkit-transition: all 0.3s ease-in-out;
+	     -khtml-transition: all 0.3s ease-in-out;
+	       -moz-transition: all 0.3s ease-in-out;
+	         -o-transition: all 0.3s ease-in-out;
+	            transition: all 0.3s ease-in-out;
+	}
+	.eraser:hover {
+	    -webkit-box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+	     -khtml-box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+	       -moz-box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+	         -o-box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+	            box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+	}
+	.eraser:hover .shine {left: 24px;}
+</style>
+<link rel="stylesheet" href="./mac.css" type="text/css">
+<link rel="stylesheet" href="./devices.min.css" type="text/css">
+<link rel="stylesheet" href="./vs/editor/editor.main.css">
+<div class="main" style="margin-bottom:20px;">
+	<div class="blackboard" id="blackboard">
+		<div>
+			<h2 class="text-center challenge-title">HTML 基础：向 HTML 元素问好</h2>
+			<div class="row">
+				<div class="challenge-instructions col-xs-12">
+					<p class="wrappable">欢迎参加 freeCodeCamp 的编程挑战赛，这些挑战将会帮助你逐步掌握 Web 开发。</p>
+					<p class="wrappable">HTML 是英文 Hyper Text Markup Language（超文本标记语言）的缩写。首先，使用 HTML 来制作一个简单的网页，你可以直接在网页内置的代码编辑器中编辑代码。</p>
+					<p class="wrappable">你看到代码编辑器中的<code>&lt;h1&gt;Hello&lt;/h1&gt;</code>了吗? 那就是一个 HTML 元素。</p>
+					<p class="wrappable">大部分 HTML 元素都有一个<code>开始标记</code>和一个<code>结束标记</code>。</p>
+					<p class="wrappable">开始标记像这样：<code>&lt;h1&gt;</code></p>
+					<p class="wrappable">结束标记像这样：<code>&lt;/h1&gt;</code></p>
+					<p class="wrappable">开始标记和结束标记的唯一区别就是结束标记多了一个<code>/</code>。</p>
+					<p class="wrappable">每个挑战都有测试，任何时候点击<strong>运行测试</strong>按钮就可以运行测试。如果代码通过测试，将会弹出一个窗口，你就可以进入下一个挑战。反之，测试区会显示你没有通过测试的原因。</p><p class="wrappable"><hr></p>
+					<p class="wrappable">请把<code>h1</code>元素的内容改为：<code>Hello World</code>。</p>
+				</div>
+			</div>
+			<div class="eraser" onclick="action()"><div class="shine"></div>去实战</div><br/>
+		</div>
+	</div>
+	<div id="controls" class="box vertical flex1 visBackgroundColor">
+      <div id="commandLineHistory" class="box vertical flex3">
+          <div class="toolbar box vertical center">
+            <div class="controls box horizontal justify">
+              <div class="box flex1">
+                <div class="close">
+                </div>
+              </div>
+              <div class="box flex1">
+                <div class="minimize">
+                </div>
+              </div>
+              <div class="box flex1">
+                <div class="plus">
+                </div>
+              </div>
+            </div>
+            <div>
+              <i class="icon-home"></i>
+              <span class="vcs-mode-aware intl-aware" data-intl="learn-git-branching">代码编辑器</span>
+            </div>
+          </div>
+        <div id="terminal" class="box flex1 horizontal startAlign">
+          
+        </div>
+
+      </div>
+    </div>
+ </div>
+ <div class="marvel-device nexus5" style="position: fixed;right: 5px;top: 25px;">
+    <div class="top-bar"></div>
+    <div class="sleep"></div>
+    <div class="volume"></div>
+    <div class="camera"></div>
+    <div class="screen">
+        <!-- Content goes here -->
+    </div>
+</div>
+<script>var require = { paths: { 'vs': './vs' } };</script>
+<script src="./vs/loader.js"></script>
+<script src="./vs/editor/editor.main.nls.js"></script>
+<script src="./vs/editor/editor.main.js"></script>
+<script type="text/javascript">
+var editor = monaco.editor.create(document.getElementById('terminal'), {
+	value: [
+		'function x() {',
+		'\tconsole.log("Hello world!");',
+		'}'
+	].join('\n'),
+	language: 'javascript',
+	theme: 'vs-dark'
+});
+function action() {
+	document.getElementById("blackboard").setAttribute('style', 'display:none;');
+}
+</script>
